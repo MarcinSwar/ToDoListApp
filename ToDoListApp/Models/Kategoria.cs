@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace ToDoListApp.Models
 {
-    public class Zadanie
+    class Kategoria
     {
-        public int idZadanie { get; set; }
-
-        public string Opis { get; set; }
-
-        public DateTime Deadline { get; set; }
     }
 }
