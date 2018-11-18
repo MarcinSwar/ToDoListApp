@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ToDoListApp.Models;
 
 namespace ToDoListApp
 {
@@ -15,11 +16,23 @@ namespace ToDoListApp
         public MainForm()
         {
             InitializeComponent();
+
+            var list = new List<Zadanie>();
+            for (int i = 0; i < 10; i++) {
+                var newZadanie = new Zadanie();
+                newZadanie.idZadanie = i;
+                newZadanie.Opis = "Ala ma kota" + i;
+                newZadanie.Deadline = DateTime.Now;
+
+                list.Add(newZadanie);
+            }
+            ZadaniaDataGridView1.DataSource = list;
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show("test:)");
+
         }
     }
 }

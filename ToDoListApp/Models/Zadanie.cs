@@ -12,6 +12,8 @@ namespace ToDoListApp.Models
 
         public string Opis { get; set; }
 
+        public Kategoria Kategoria { get; set; }
+
         public DateTime Deadline { get; set; }
     }
 }

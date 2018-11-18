@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ToDoListApp.Models
 {
-    class Kategoria
+    public class Kategoria
     {
+        public int IdKategoria { get; set; }
+
+        public string Nazwa{ get; set; }
     }
 }
