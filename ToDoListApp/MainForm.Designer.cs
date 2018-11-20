@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oProgramieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -35,11 +36,16 @@
             this.zapisywanieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zapiszJakoJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.ZadaniaDataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ZadaniaDataGridView = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.dodajZadanieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.edytujZadanieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usunZadanieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ZadaniaDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ZadaniaDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -65,14 +71,16 @@
             // oProgramieToolStripMenuItem
             // 
             this.oProgramieToolStripMenuItem.Name = "oProgramieToolStripMenuItem";
-            this.oProgramieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.oProgramieToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.oProgramieToolStripMenuItem.Text = "O programie";
+            this.oProgramieToolStripMenuItem.Click += new System.EventHandler(this.oProgramieToolStripMenuItem_Click);
             // 
             // zakonczToolStripMenuItem
             // 
             this.zakonczToolStripMenuItem.Name = "zakonczToolStripMenuItem";
-            this.zakonczToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zakonczToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.zakonczToolStripMenuItem.Text = "Zakończ";
+            this.zakonczToolStripMenuItem.Click += new System.EventHandler(this.zakonczToolStripMenuItem_Click);
             // 
             // zapisywanieToolStripMenuItem
             // 
@@ -99,15 +107,16 @@
             this.label1.Text = "Zadania do zrobienia";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ZadaniaDataGridView1
+            // ZadaniaDataGridView
             // 
-            this.ZadaniaDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ZadaniaDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ZadaniaDataGridView1.Location = new System.Drawing.Point(0, 24);
-            this.ZadaniaDataGridView1.Name = "ZadaniaDataGridView1";
-            this.ZadaniaDataGridView1.Size = new System.Drawing.Size(470, 332);
-            this.ZadaniaDataGridView1.TabIndex = 3;
-            this.ZadaniaDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.ZadaniaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ZadaniaDataGridView.ContextMenuStrip = this.contextMenuStrip1;
+            this.ZadaniaDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ZadaniaDataGridView.Location = new System.Drawing.Point(0, 72);
+            this.ZadaniaDataGridView.Name = "ZadaniaDataGridView";
+            this.ZadaniaDataGridView.Size = new System.Drawing.Size(470, 284);
+            this.ZadaniaDataGridView.TabIndex = 3;
+            this.ZadaniaDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel1
             // 
@@ -118,21 +127,51 @@
             this.panel1.Size = new System.Drawing.Size(470, 48);
             this.panel1.TabIndex = 4;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dodajZadanieToolStripMenuItem,
+            this.edytujZadanieToolStripMenuItem,
+            this.usunZadanieToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(151, 70);
+            // 
+            // dodajZadanieToolStripMenuItem
+            // 
+            this.dodajZadanieToolStripMenuItem.Name = "dodajZadanieToolStripMenuItem";
+            this.dodajZadanieToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.dodajZadanieToolStripMenuItem.Text = "Dodaj zadanie";
+            this.dodajZadanieToolStripMenuItem.Click += new System.EventHandler(this.dodajZadanieToolStripMenuItem_Click);
+            // 
+            // edytujZadanieToolStripMenuItem
+            // 
+            this.edytujZadanieToolStripMenuItem.Name = "edytujZadanieToolStripMenuItem";
+            this.edytujZadanieToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.edytujZadanieToolStripMenuItem.Text = "Edytuj zadanie";
+            // 
+            // usunZadanieToolStripMenuItem
+            // 
+            this.usunZadanieToolStripMenuItem.Name = "usunZadanieToolStripMenuItem";
+            this.usunZadanieToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.usunZadanieToolStripMenuItem.Text = "Usuń zadanie";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 356);
+            this.Controls.Add(this.ZadaniaDataGridView);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.ZadaniaDataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ToDoList App";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ZadaniaDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ZadaniaDataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,8 +186,12 @@
         private System.Windows.Forms.ToolStripMenuItem zapisywanieToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zapiszJakoJSONToolStripMenuItem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView ZadaniaDataGridView1;
+        private System.Windows.Forms.DataGridView ZadaniaDataGridView;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem dodajZadanieToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem edytujZadanieToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usunZadanieToolStripMenuItem;
     }
 }
 

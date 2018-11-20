@@ -26,13 +26,28 @@ namespace ToDoListApp
 
                 list.Add(newZadanie);
             }
-            ZadaniaDataGridView1.DataSource = list;
+            ZadaniaDataGridView.DataSource = list;
 
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void zakonczToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void oProgramieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("info");
+        }
+
+        private void dodajZadanieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AddTaskForm().ShowDialog();
         }
     }
 }
